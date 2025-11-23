@@ -163,8 +163,8 @@ MonoBehaviour:
   Thumbnail: 
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://Cyberpunk1\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"717059734\" type=\"8\" value=\"10,10\" />\n 
-    <presetinput identifier=\"y_amount\" uid=\"1281454939\" type=\"4\" value=\"37\"
-    />\n  <presetinput identifier=\"x_amount_1\" uid=\"1281454282\" type=\"4\" value=\"41\"
+    <presetinput identifier=\"y_amount\" uid=\"1281454939\" type=\"4\" value=\"45\"
+    />\n  <presetinput identifier=\"x_amount_1\" uid=\"1281454282\" type=\"4\" value=\"48\"
     />\n  <presetinput identifier=\"y_amount_1\" uid=\"1281454241\" type=\"4\" value=\"38\"
     />\n  <presetinput identifier=\"Position\" uid=\"1286550396\" type=\"0\" value=\"0.354\"
     />\n </sbspreset>\n"
@@ -232,7 +232,7 @@ MonoBehaviour:
           GuiDescription: Amount of patterns on the Y axis.
           Type: 4
           WidgetType: 1
-        Data: 37
+        Data: 45
         NumericalDescription:
           DefaultValue: 10
           MinValue: 1
@@ -254,7 +254,7 @@ MonoBehaviour:
           GuiDescription: Amount of patterns on the X axis.
           Type: 4
           WidgetType: 1
-        Data: 41
+        Data: 48
         NumericalDescription:
           DefaultValue: 6
           MinValue: 1

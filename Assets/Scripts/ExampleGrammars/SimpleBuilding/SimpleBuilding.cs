@@ -152,9 +152,8 @@ namespace CityGen
                     }
                 }
 
-                // Apply Y offset for ground floor
-                Vector3 spawnPosition = stockNumber == 0 ? new Vector3(0, -0.2f, 0) : Vector3.zero;
-                var newStock = SpawnPrefab(stockPrefab, spawnPosition);
+                // Apply Y offset for all floors
+                var newStock = SpawnPrefab(stockPrefab, new Vector3(0, -0.2f, 0));
                 if (newStock == null)
                 {
                     Debug.LogError($"[{name}] Failed to spawn stock prefab '{stockPrefab.name}' at floor {stockNumber}.");

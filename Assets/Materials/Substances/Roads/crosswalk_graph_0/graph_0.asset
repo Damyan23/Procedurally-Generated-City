@@ -141,7 +141,10 @@ MonoBehaviour:
   PhysicalSize: {x: 0, y: 0, z: 0}
   EnablePhysicalSize: 0
   Thumbnail: 
-  CurrentStatePreset: 
+  CurrentStatePreset: " <sbspreset pkgurl=\"pkg://crosswalk\" label=\"\" >\n  <presetinput
+    identifier=\"$outputsize\" uid=\"1734714072\" type=\"8\" value=\"10,10\" />\n 
+    <presetinput identifier=\"scale\" uid=\"17606485\" type=\"0\" value=\"1.029\"
+    />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -228,7 +231,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 0
           WidgetType: 1
-        Data: 1
+        Data: 1.029
         NumericalDescription:
           DefaultValue: 1
           MinValue: 0

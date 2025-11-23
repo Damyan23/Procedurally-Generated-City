@@ -168,7 +168,7 @@ MonoBehaviour:
     value=\"10,10\" />\n  <presetinput identifier=\"Position\" uid=\"3452133546\"
     type=\"0\" value=\"0.529\" />\n  <presetinput identifier=\"x_amount\" uid=\"3451982606\"
     type=\"4\" value=\"41\" />\n  <presetinput identifier=\"y_amount\" uid=\"3451982550\"
-    type=\"4\" value=\"27\" />\n  <presetinput identifier=\"x_amount_2\" uid=\"3392851013\"
+    type=\"4\" value=\"33\" />\n  <presetinput identifier=\"x_amount_2\" uid=\"3392851013\"
     type=\"4\" value=\"17\" />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
           GuiDescription: Amount of patterns on the Y axis.
           Type: 4
           WidgetType: 1
-        Data: 27
+        Data: 33
         NumericalDescription:
           DefaultValue: 5
           MinValue: 1

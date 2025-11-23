@@ -80,10 +80,10 @@ public class RoadBuilder : MonoBehaviour
         // Only initialize if the list is empty
         if (trafficLightConfigs.Count == 0)
         {
-            trafficLightConfigs.Add(new TrafficLightSettings("Top", new Vector3(-0.6f, 0.2f, 0.6f), new Vector3(0, 90, 0)));
-            trafficLightConfigs.Add(new TrafficLightSettings("Bottom", new Vector3(-0.6f, 0.2f, -0.6f), new Vector3(0, 0, 0)));
-            trafficLightConfigs.Add(new TrafficLightSettings("Left", new Vector3(0.6f, 0.2f, 0.6f), new Vector3(0, 180, 0)));
-            trafficLightConfigs.Add(new TrafficLightSettings("Right", new Vector3(0.6f, 0.2f, -0.6f), new Vector3(0, -90, 0)));
+            trafficLightConfigs.Add(new TrafficLightSettings("Top", new Vector3(-0.6f, 0.0f, 0.6f), new Vector3(0, 90, 0)));
+            trafficLightConfigs.Add(new TrafficLightSettings("Bottom", new Vector3(-0.6f, 0.0f, -0.6f), new Vector3(0, 0, 0)));
+            trafficLightConfigs.Add(new TrafficLightSettings("Left", new Vector3(0.6f, 0.0f, 0.6f), new Vector3(0, 180, 0)));
+            trafficLightConfigs.Add(new TrafficLightSettings("Right", new Vector3(0.6f, 0.0f, -0.6f), new Vector3(0, -90, 0)));
         }
     }
 
