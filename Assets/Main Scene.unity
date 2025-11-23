@@ -931,6 +931,13 @@ MonoBehaviour:
   - {fileID: 1748829817795947011, guid: 7ec657cd902f6334cb4a66f49dc6e6bd, type: 3}
   sidewalkPrefab: {fileID: 106750432219295830, guid: 9cfc5cb9aa2899f48b6a679b05f3fca3, type: 3}
   sidewalkCornerPrefab: {fileID: 3188431308038032418, guid: b6bf6c1401fad19429895d72b4d64c8a, type: 3}
+  lightPolePrefabs:
+  - {fileID: 8876747435618455540, guid: 19347980b3212ec4498437cd9c0d8fbb, type: 3}
+  tvPrefabs: []
+  lightPoleInterval: 3
+  lightPoleEdgeOffset: {x: 0.4, y: 0, z: 0}
+  tvProbability: 0.15
+  tvCenterOffset: {x: 0, y: 0, z: 0}
   globalStopLightOffset: {x: 0, y: 0, z: 0}
   trafficLightProbability: 0.3
   crosswalkProbability: 1

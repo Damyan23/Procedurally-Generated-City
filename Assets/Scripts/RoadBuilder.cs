@@ -35,6 +35,26 @@ public class RoadBuilder : MonoBehaviour
     public GameObject sidewalkPrefab; // Straight sidewalk prefab
     public GameObject sidewalkCornerPrefab; // Corner sidewalk prefab
     
+    [Header("Sidewalk Decorations")]
+    public List<GameObject> lightPolePrefabs = new List<GameObject>();
+    public List<GameObject> tvPrefabs = new List<GameObject>();
+    
+    [Header("Light Pole Settings")]
+    [Range(1, 10)]
+    [Tooltip("Place light poles every N sidewalk tiles")]
+    public int lightPoleInterval = 3;
+    [Tooltip("Scale multiplier for light poles (increase if they're too small)")]
+    public float lightPoleScale = 3f;
+    [Tooltip("Offset from sidewalk center for light pole placement")]
+    public Vector3 lightPoleOffset = new Vector3(0.3f, 0f, 0.3f);
+    
+    [Header("TV Settings")]
+    [Range(0f, 1f)]
+    [Tooltip("Random probability of placing TV on sidewalk (0 = never, 1 = always)")]
+    public float tvProbability = 0.15f;
+    [Tooltip("Offset for TV placement in center of sidewalk")]
+    public Vector3 tvCenterOffset = Vector3.zero;
+    
     [Header("Traffic Light Settings")]
     public Vector3 globalStopLightOffset = Vector3.zero;
     [Range(0f, 1f)]
@@ -52,6 +72,7 @@ public class RoadBuilder : MonoBehaviour
         InitializeDefaultTrafficLightConfigs();
         BuildRoads();
         BuildSidewalks();
+        DecorateSidewalks();
     }
 
     private void InitializeDefaultTrafficLightConfigs()
@@ -308,7 +329,7 @@ public class RoadBuilder : MonoBehaviour
                 DestroyImmediate(existingTile.gameObject);
             }
             
-            // Calculate position (same as regular roads - full height below ground level)
+            // Calculate position
             Vector3 position = roadGrid.transform.position + new Vector3(
                 (crosswalk.position.x + 0.5f) * roadGrid.cellSize,
                 0f,
@@ -360,7 +381,6 @@ public class RoadBuilder : MonoBehaviour
             GameObject prefabToUse = sidewalkPrefab;
             Quaternion rotation = Quaternion.identity;
             
-            // Check if this is a corner (2 connections that are NOT opposite)
             if (connections == 2)
             {
                 bool isOppositeConnections = (info.hasTopNeighbor && info.hasBottomNeighbor) || 
@@ -376,7 +396,7 @@ public class RoadBuilder : MonoBehaviour
                     else if (info.hasRightNeighbor && info.hasBottomNeighbor)
                         rotation = Quaternion.Euler(0, -90, 0); // Right-Bottom corner  
                     else if (info.hasBottomNeighbor && info.hasLeftNeighbor)
-                        rotation = Quaternion.identity; // Bottom-Left corner (no rotation for -180° prefab)
+                        rotation = Quaternion.identity; // Bottom-Left corner
                     else if (info.hasLeftNeighbor && info.hasTopNeighbor)
                         rotation = Quaternion.Euler(0, 270, 0); // Left-Top corner
                 }
@@ -385,7 +405,6 @@ public class RoadBuilder : MonoBehaviour
                     // Straight sidewalk with opposite connections
                     if (info.hasLeftNeighbor && info.hasRightNeighbor)
                         rotation = Quaternion.Euler(0, 90, 0); // Horizontal
-                    // Vertical connections use default rotation (0 degrees)
                 }
             }
             else if (connections == 1)
@@ -393,9 +412,7 @@ public class RoadBuilder : MonoBehaviour
                 // Single connection - rotate straight piece to face the connection
                 if (info.hasLeftNeighbor || info.hasRightNeighbor)
                     rotation = Quaternion.Euler(0, 90, 0); // Horizontal
-                // Vertical connections use default rotation (0 degrees)
             }
-            // For 0, 3, or 4 connections, use default straight piece at 0 rotation
 
             if (prefabToUse != null)
             {
@@ -416,4 +433,76 @@ public class RoadBuilder : MonoBehaviour
         
         Debug.Log($"Built {sidewalkInfos.Count} sidewalk tiles.");
     }
+    
+    private void DecorateSidewalks()
+    {
+        if (roadGrid == null) return;
+        
+        List<RoadCellInfo> sidewalkInfos = roadGrid.GetSidewalkCellConnections();
+        int sidewalkCount = 0;
+        
+        foreach (RoadCellInfo info in sidewalkInfos)
+        {
+            Vector2Int cell = info.cell;
+            
+            Vector3 position = roadGrid.transform.position + new Vector3(
+                (cell.x + 0.5f) * roadGrid.cellSize,
+                0f,
+                (cell.y + 0.5f) * roadGrid.cellSize
+            );
+            
+            // Find the sidewalk tile at this position for parent reference
+            string sidewalkTileName = "Sidewalk_Cell: " + cell.ToString();
+            Transform sidewalkTile = transform.Find(sidewalkTileName);
+            
+            // Place light poles every N tiles
+            if (sidewalkCount % lightPoleInterval == 0 && lightPolePrefabs.Count > 0)
+            {
+                PlaceLightPoles(info, position, sidewalkTile);
+            }
+            
+            // Place TV with random probability
+            if (Random.Range(0f, 1f) <= tvProbability && tvPrefabs.Count > 0)
+            {
+                PlaceTV(info, position, sidewalkTile);
+            }
+            
+            sidewalkCount++;
+        }
+        
+        Debug.Log($"Decorated {sidewalkInfos.Count} sidewalk tiles with light poles and TVs.");
+    }
+    
+    private void PlaceLightPoles(RoadCellInfo sidewalkInfo, Vector3 sidewalkPosition, Transform parentTile)
+    {
+        // Choose random light pole prefab
+        GameObject selectedPole = lightPolePrefabs[Random.Range(0, lightPolePrefabs.Count)];
+        if (selectedPole != null)
+        {
+            // Place one pole per sidewalk tile with offset from center
+            Vector3 polePosition = sidewalkPosition + lightPoleOffset;
+            
+            // Add random Y rotation
+            Quaternion poleRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+            GameObject lightPole = Instantiate(selectedPole, polePosition, poleRotation, transform);
+            lightPole.name = $"LightPole_{sidewalkInfo.cell}";
+        }
+    }
+    
+    private void PlaceTV(RoadCellInfo sidewalkInfo, Vector3 sidewalkPosition, Transform parentTile)
+    {
+        // Choose random TV prefab
+        GameObject selectedTV = tvPrefabs[Random.Range(0, tvPrefabs.Count)];
+        if (selectedTV != null)
+        {
+            Vector3 tvPosition = sidewalkPosition + tvCenterOffset;
+            
+            // Add random Y rotation for variety
+            Quaternion tvRotation = Quaternion.Euler(0, Random.Range(0f, 360f), 0);
+            GameObject tv = Instantiate(selectedTV, tvPosition, tvRotation, transform);
+            tv.name = $"TV_{sidewalkInfo.cell}";
+        }
+    }
+    
+
 }

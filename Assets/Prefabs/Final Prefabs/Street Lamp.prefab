@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 2878706374858231068}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.78, y: 2.285, z: 0}
+  m_LocalPosition: {x: 0.571, y: 1.772, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,9 +43,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 0.91166025, g: 1, b: 0.0990566, a: 1}
-  m_Intensity: 2802.503
-  m_Range: 10
+  m_Color: {r: 0.8833834, g: 0.9245283, b: 0.5189569, a: 0.90588236}
+  m_Intensity: 186833.52
+  m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -93,7 +93,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShadowRadius: 0.5
   m_ShadowAngle: 0
   m_LightUnit: 0
   m_LuxAtDistance: 1
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_ShapeWidth: 0.5
   m_ShapeHeight: 0.5
   m_AspectRatio: 1
-  m_ShapeRadius: 0.025
+  m_ShapeRadius: 0.5
   m_SoftnessScale: 1
   m_UseCustomSpotLightShadowCone: 0
   m_CustomSpotLightShadowCone: 30
@@ -282,6 +282,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 7719432705788916467}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -320,6 +332,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2167349358961141295, guid: 5fea3ad9ec35a774e82b3ae66fbf0e27, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
