@@ -152,7 +152,9 @@ namespace CityGen
                     }
                 }
 
-                var newStock = SpawnPrefab(stockPrefab);
+                // Apply Y offset for ground floor
+                Vector3 spawnPosition = stockNumber == 0 ? new Vector3(0, -0.2f, 0) : Vector3.zero;
+                var newStock = SpawnPrefab(stockPrefab, spawnPosition);
                 if (newStock == null)
                 {
                     Debug.LogError($"[{name}] Failed to spawn stock prefab '{stockPrefab.name}' at floor {stockNumber}.");
@@ -165,7 +167,7 @@ namespace CityGen
                 lastStockPrefab = stockPrefab;
 
                 // Continue one floor above
-                var remaining = CreateSymbol<SimpleBuilding>("stock", new Vector3(0, stockHeight, 0));
+                var remaining = CreateSymbol<SimpleBuilding>("stock", new Vector3(0, stockHeight, -0.1f));
                 remaining.Initialize(
                     buildingHeight,
                     stockHeight,

@@ -38,6 +38,7 @@ public sealed class MeshWelder : MonoBehaviour
 
         var dst = WeldVertices(src, weldDistance, uvTolerance, normalAngleTolerance,
                                keepSubmeshesSeparated, recalcNormalsAfter, recalcTangentsAfter);
+                               
         dst.name = src.name + "_Welded";
 
         if (kind == TargetKind.MeshFilter)

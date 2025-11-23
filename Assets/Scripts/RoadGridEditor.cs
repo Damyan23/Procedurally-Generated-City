@@ -155,7 +155,6 @@ public class RoadGridEditor : Editor
                         bool isSidewalk = grid.IsSidewalkCell(cell);
                         if (currentDrawState == null) currentDrawState = !isSidewalk;
 
-                        // NEW: Clear it from road/house before setting sidewalk
                         if (currentDrawState == true && !isSidewalk)
                         {
                             if (grid.IsRoadCell(cell)) grid.ToggleRoadCell(cell);
