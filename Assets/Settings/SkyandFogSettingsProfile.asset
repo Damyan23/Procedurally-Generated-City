@@ -84,7 +84,7 @@ MonoBehaviour:
     m_Value: 0
   ozoneDensityDimmer:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   ozoneMinimumAltitude:
     m_OverrideState: 0
     m_Value: 20000

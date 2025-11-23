@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RoadGrid : MonoBehaviour
@@ -144,6 +145,29 @@ public class RoadGrid : MonoBehaviour
             info.hasBottomNeighbor = roadCellsSet.Contains(bottom);
             info.hasLeftNeighbor = roadCellsSet.Contains(left);
             info.hasRightNeighbor = roadCellsSet.Contains(right);
+
+            result.Add(info);
+        }
+
+        return result;
+    }
+    
+    public List<RoadCellInfo> GetSidewalkCellConnections()
+    {
+        List<RoadCellInfo> result = new List<RoadCellInfo>();
+
+        foreach (Vector2Int cell in sidewalkCellsSet)
+        {
+            RoadCellInfo info = new RoadCellInfo(cell);
+            Vector2Int top = new Vector2Int(cell.x + 1, cell.y);
+            Vector2Int bottom = new Vector2Int(cell.x - 1, cell.y);
+            Vector2Int left = new Vector2Int(cell.x, cell.y + 1);
+            Vector2Int right = new Vector2Int(cell.x, cell.y - 1);
+
+            info.hasTopNeighbor = sidewalkCellsSet.Contains(top);
+            info.hasBottomNeighbor = sidewalkCellsSet.Contains(bottom);
+            info.hasLeftNeighbor = sidewalkCellsSet.Contains(left);
+            info.hasRightNeighbor = sidewalkCellsSet.Contains(right);
 
             result.Add(info);
         }

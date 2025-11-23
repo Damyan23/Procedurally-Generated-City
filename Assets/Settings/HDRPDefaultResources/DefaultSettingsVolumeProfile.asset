@@ -869,6 +869,7 @@ MonoBehaviour:
   - {fileID: 1660030910090810073}
   - {fileID: 2907552271038889519}
   - {fileID: 4831861578341378781}
+  - {fileID: 2264861787218104462}
 --- !u!114 &448115243408767295
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1258,6 +1259,37 @@ MonoBehaviour:
   ambientProbeDimmer:
     m_OverrideState: 1
     m_Value: 0.5
+--- !u!114 &2264861787218104462
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57606aea2b5caa74c810bf41542a33f8, type: 3}
+  m_Name: CASSharpen
+  m_EditorClassIdentifier: 
+  active: 1
+  sharpness:
+    m_OverrideState: 1
+    m_Value: 0.7
+  antiRinging:
+    m_OverrideState: 1
+    m_Value: 0.2
+  vibrance:
+    m_OverrideState: 1
+    m_Value: 0.08
+  saturation:
+    m_OverrideState: 1
+    m_Value: 1
+  microContrast:
+    m_OverrideState: 1
+    m_Value: 0
+  enable:
+    m_OverrideState: 1
+    m_Value: 1
 --- !u!114 &2394746966588715285
 MonoBehaviour:
   m_ObjectHideFlags: 3
