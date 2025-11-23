@@ -56,7 +56,7 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   - block: {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
     allowedNextStocks:
     - {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
@@ -66,7 +66,7 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   - block: {fileID: 2734498484058690668, guid: 894b4cfef63a68448a58ff1f053457d6, type: 3}
     allowedNextStocks:
     - {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
@@ -76,7 +76,7 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   - block: {fileID: 2861905713464708010, guid: d80793dcf95abb7458fc9bdfbe8e9c88, type: 3}
     allowedNextStocks:
     - {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
@@ -86,7 +86,7 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   - block: {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     allowedNextStocks:
     - {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
@@ -96,7 +96,7 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   - block: {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowedNextStocks:
     - {fileID: 958444914785169805, guid: b12b2a0df8da3a748be461f5e10b23ce, type: 3}
@@ -106,14 +106,12 @@ MonoBehaviour:
     - {fileID: 1441912436316352066, guid: 7b60c0fd6c14ad140b5638ee1740eddb, type: 3}
     - {fileID: 8588415370670385534, guid: 93a4bb4ee0245554389937a91a09736c, type: 3}
     allowAnyNextIfEmpty: 0
-    allowAsGround: 0
+    allowAsGround: 1
   buildingHeight: -1
   stockHeight: 1
   maxHeight: 10
   minHeight: 2
-  rooftopObjectPrefabs:
-  - {fileID: 4542442745374547073, guid: 31d879abff90f414caf3212d49bfad6e, type: 3}
-  - {fileID: 6635951043575069070, guid: 3b111704caef0c348a98db3765bb5088, type: 3}
+  rooftopObjectPrefabs: []
   rooftopObjectProbability: 0.4
   maxRooftopObjects: 2
   minObjectSpacing: 2

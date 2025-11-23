@@ -935,7 +935,8 @@ MonoBehaviour:
   - {fileID: 8876747435618455540, guid: 19347980b3212ec4498437cd9c0d8fbb, type: 3}
   tvPrefabs: []
   lightPoleInterval: 3
-  lightPoleEdgeOffset: {x: 0.4, y: 0, z: 0}
+  lightPoleScale: 3
+  lightPoleOffset: {x: 0.3, y: 0, z: 0.3}
   tvProbability: 0.15
   tvCenterOffset: {x: 0, y: 0, z: 0}
   globalStopLightOffset: {x: 0, y: 0, z: 0}
